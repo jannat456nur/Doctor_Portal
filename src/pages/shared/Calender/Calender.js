@@ -9,7 +9,7 @@ const Calender = ({date,setDate}) => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <StaticDatePicker
+  <StaticDatePicker
         displayStaticWrapperAs="desktop"
        
         value={date}

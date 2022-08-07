@@ -12,7 +12,7 @@ const AppointmentHeader = ({date,setDate}) => {
              <Calender date={date} setDate={setDate}></Calender>
         </Grid>
         <Grid item xs={12} md={6}>
-        <img style={{width:500}} src={chair}></img>
+        <img style={{width:350}} src={chair}></img>
         </Grid>
            
     </Grid>
