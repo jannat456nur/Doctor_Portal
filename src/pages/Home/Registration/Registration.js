@@ -1,15 +1,20 @@
-import { Container, Grid } from '@mui/material'
+import { Alert, CircularProgress, Container, Grid } from '@mui/material'
 import React, { useState } from 'react'
 import login from '../../../images/login.png'
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 
 
 const Registration = () => {
+
+  const {user,registerUser,isLoading,authError}=useAuth();
+
   const [loginData,setLoginData] = useState({})
+
   const handleOnChange = e => {
     const feild = e.target.name;
     const value = e.target.value;
@@ -22,6 +27,7 @@ const Registration = () => {
   const handleLoginSubmit = e => {
     // alert('submit')
     e.preventDefault();
+    registerUser(loginData.email,loginData.password)
 }
   return (
       <Container>
@@ -30,7 +36,9 @@ const Registration = () => {
                    <Typography variant="bosy1" gutterBottom component="div">
                                 Login
           </Typography>
-          <form onClick={handleLoginSubmit}>
+         { 
+         !isLoading &&
+         <form onClick={handleLoginSubmit}>
 
             <TextField
               sx={{width:'75%',m:1}}
@@ -70,8 +78,10 @@ const Registration = () => {
                     sx={{ width: '75%', m: 1 }}
                     color="inherit">Already Have an Account</Button>
            </NavLink>
-          </form>
-        
+          </form>}
+        {isLoading && <CircularProgress/>}
+        {user?.email &&  <Alert severity="success">This is a success alert — check it out!</Alert>}
+        {authError &&     <Alert severity="error">{authError}</Alert>}
              </Grid>
              <Grid item xs={12} md={6}>
                   <img src={login} style={{width:400}}></img>
