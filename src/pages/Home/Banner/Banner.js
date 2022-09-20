@@ -1,45 +1,45 @@
-import React from 'react'
-import chair from '../../../images/chair.png'
-import bg from '../../../images/bg.png'
-import Box from '@mui/material/Box';
+import React from 'react';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { Container } from '@mui/material';
+import chair from '../../../images/chair.png';
+import bg from '../../../images/bg.png';
+import { Typography, Button, Container } from '@mui/material';
+import Box from '@mui/material/Box';
 
-const bannerBg ={
-    background :`(${bg})`,
- 
+
+const bannerBg = {
+    background: `url(${bg})`,
+
 }
-const verticleCenter={
-    display:'flex', 
-      height:450,
-    alignItems:'center'
+
+const verticalCenter = {
+    display: 'flex',
+    alignItems: 'center',
+    height: 400
 }
 
 const Banner = () => {
-  return (
-    <Container style={bannerBg} sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={5} style={{...verticleCenter, textAlign:'left'}}>
-     
-          <Box>
-          <Typography variant="h3" gutterBottom component="div">
-        Your New Smile Start Here
-      </Typography>
-      <Typography variant="h6" gutterBottom component="div" style={{fontSize:14,fontSize:14,fontWeight:500,color:'gray'}}>
-      holder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available
-      </Typography>
-      <Button varient="contained" style={{backgroundColor:'#2DE1F0',color:'white'}}>Get Appointment</Button>
-          </Box>
-        </Grid>
-       
-        <Grid item xs={12} md={7} style={verticleCenter}>
-           <img style={{width:400}} src={chair}></img>
-        </Grid>
-      </Grid>
-    </Container>
-  )
-}
+    return (
+        <Container style={bannerBg} sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+                <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
+                    <Box>
+                        <Typography variant="h3">
+                            Your New Smile <br />
+                            Starts Here
+                        </Typography>
+                        <Typography variant="h6" sx={{ my: 3, fontSize: 13, fontWeight: 300, color: 'gray' }}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil asperiores velit illum enim incidunt doloremque vitae impedit at accusantium tenetur.
+                        </Typography>
+                        <Button variant="contained" style={{ backgroundColor: '#5CE7ED' }}>Get Appointment</Button>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} md={6} style={verticalCenter} >
+                    <img style={{ width: '350px' }} src={chair} alt="" />
+                </Grid>
 
-export default Banner
+            </Grid>
+        </Container>
+    );
+};
+
+export default Banner;

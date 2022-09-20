@@ -1,0 +1,42 @@
+.horizontal{
+    overflow-x: hidden; 
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn{
+    /* background-color: #fff; */
+    color: #fff;
+    /* border: 1px solid white; */
+    width: 20%;
+    display: flex;
+    align-items:flex-end;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.btn::before{
+    content: "";
+    position:absolute;
+    left: 0;
+    top: 0;
+    background:rgb(10, 10, 10);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+   
+.btn1::before{
+    transform: scaleX(0);
+}
+   
+.btn1:hover::before{
+    transform: scaleX(1);
+}

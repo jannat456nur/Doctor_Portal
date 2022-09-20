@@ -25,7 +25,8 @@ export default function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Doctor Portal
+            
           </Typography>
           <Link to='/appointment'><Button color="inherit">Appointment</Button></Link>
           <NavLink to='/registration'>

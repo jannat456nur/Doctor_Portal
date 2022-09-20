@@ -1,22 +1,20 @@
-import React from 'react'
-import Navigation from '../../shared/Navigation/Navigation'
-import AppointmentBanner from '../AppointmentBanner/AppointmentBanner'
-import Banner from '../Banner/Banner'
-import IconPart from '../IconPart/IconPart'
-import Services from '../Services/Services'
-
-
+import React from 'react';
+import Navigation from '../../shared/Navigation/Navigation';
+import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
+import Banner from '../Banner/Banner';
+import Services from '../Services/Services';
+import IconPart from '../IconPart/IconPart';
 
 const Home = () => {
-  return (
-    <>
-   <Navigation></Navigation>
-   <Banner></Banner>
-   {/* <IconPart></IconPart> */}
-   <Services></Services>
-   <AppointmentBanner></AppointmentBanner>
-   </>
-  )
-}
+    return (
+        <div>
+            <Navigation></Navigation>
+            <Banner></Banner>
+            <Services></Services>
+            {/* <IconPart></IconPart> */}
+            <AppointmentBanner></AppointmentBanner>
+        </div>
+    );
+};
 
-export default Home
+export default Home;
